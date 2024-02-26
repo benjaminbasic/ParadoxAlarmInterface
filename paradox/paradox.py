@@ -173,6 +173,7 @@ class Paradox:
                 raise ConnectionError("Panel did not replied to StartCommunication")
 
             if reply.fields.value.product_id is not None:
+                logger.debug('panel_id: %d', reply.fields.value.panel_id)
                 self.panel = create_panel(
                     self, reply
                 )  # Now we know what panel it is. Let's
